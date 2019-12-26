@@ -18,16 +18,7 @@ export async function publish(queue: string, message: object | string, routingKe
     console.info('RMQ published!', queue)
 }
 
-export type NoticeType = 'mail' | 'sms' | 'phone' | 'weChat'
 
-export class TypeNoticeMessage {
-    id: string
-    type: NoticeType
-    title: string
-    content: string
-    timestamp: string
-    createdAt: string
-}
-export async function publishNotice(message: object | string) {
+export async function publishNoticeMessage(message: object | string) {
     await publish(rmq_publish_exchange, message, '')
 }

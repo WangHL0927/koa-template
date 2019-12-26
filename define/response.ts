@@ -15,3 +15,12 @@ export class PermissionDenied {
         }
     }
 }
+
+export class Error {
+    constructor(msg?: string) {
+        return {
+            status: 'error',
+            msg: msg || 'Fuck off',
+        }
+    }
+}
