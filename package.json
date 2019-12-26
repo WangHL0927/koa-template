@@ -1,0 +1,30 @@
+{
+  "name": "service-devops-msg-api",
+  "version": "1.0.0",
+  "description": "DevOps 消息API服务器",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "export NODE_ENV=debug && ts-node-dev index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.pi2star.com/platform-devops/service-devops-msg-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "@pi2star/logger": "^1.1.1",
+    "koa": "^2.11.0",
+    "koa-compress": "^3.0.0",
+    "koa-logger": "^3.2.1",
+    "moment": "^2.24.0",
+    "nodemailer": "^6.4.2"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.0",
+    "ts-node": "^8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.4"
+  }
+}
