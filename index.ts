@@ -19,7 +19,7 @@ async function main() {
     
     //rmq
     console.info('connect RMQ...')
-    rmq.init('amqp://platform-devops:eMCNB3U6RfcfAeJAnW2Fn2L4@101.201.225.193:5672/platform-devops')
+    await rmq.init()
     
     // server
     console.info('init server...')
