@@ -6,6 +6,8 @@ export async function checkToken(ctx, next) {
     if (token === 'please!') {
         return next();
     }
+    
+    console.error('token error!', token)
     ctx.body = new PermissionDenied()
 }
 
