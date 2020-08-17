@@ -1,3 +1,7 @@
-import { startServer } from './src/app'
+import { startServer } from './src/app';
 
-startServer()
+async function main() {
+  await startServer();
+}
+
+main().catch(console.error);

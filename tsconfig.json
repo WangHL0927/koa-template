@@ -4,7 +4,7 @@
     "outDir": "./dist",
     "sourceMap": false,
     "moduleResolution": "node",
-    "target": "ES2017",
+    "target": "ES5",
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
@@ -12,6 +12,6 @@
     "index.ts"
   ],
   "exclude": [
-    "node_modules/*"
+    "node_modules"
   ]
 }
