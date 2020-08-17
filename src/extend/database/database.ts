@@ -1,10 +1,9 @@
 import pg from 'pg';
 import { camelizeKeys } from 'humps';
-import { createLogger } from './logger';
-import { environment } from '../environments/environment';
-import { ErrorDB } from '../types/api/output';
+import { createLogger } from '../logger';
+import { environment } from '../../environments/environment';
 
-import { DBTransactionError } from '../types/database/type';
+import { DBTransactionError } from './type';
 
 
 const logger = createLogger('database');

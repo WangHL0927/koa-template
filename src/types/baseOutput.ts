@@ -1,6 +1,6 @@
 type OutputStatus = number; // response status code. success : 0
 
-export interface Output<T> {
+export interface BaseOutput<T> {
   code: OutputStatus;
   data?: T;
   message?: string;
@@ -21,10 +21,11 @@ export class BaseOutput<T> {
   }
 }
 
-export class BaseError implements Output<null> {
+export class BaseError implements BaseOutput<null> {
   code: number;
   message: string;
-  timestamp = new Date();
+  data = null;
+  timestamp = new Date().toISOString();
 
   constructor(code?: number, message?: string) {
     this.code = code || 1000;
@@ -32,23 +33,11 @@ export class BaseError implements Output<null> {
   }
 }
 
-
-export class Success implements Output<string> {
+export class BaseSuccess implements BaseOutput<string> {
   code = 0;
   data = 'success.';
   message = null;
-  timestamp = new Date();
-}
-
-export class ErrorDB implements Output<null> {
-  code: number;
-  message: string;
-  timestamp = new Date();
-
-  constructor(code?: number, message?: string) {
-    this.code = code || 2000;
-    this.message = message || 'database error.';
-  }
+  timestamp = new Date().toISOString();
 }
 
 

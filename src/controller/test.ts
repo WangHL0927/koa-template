@@ -1,22 +1,36 @@
 import Koa from 'koa';
 
-import { BaseOutput, BaseError, ErrorDB, Success } from '../types/api/output';
+import { BaseOutput, BaseSuccess } from '../types/baseOutput';
+// import { v4 as uuidV4 } from 'uuid';
 
-import db from '../extend/database';
-import { DBTransactionError } from '../types/database/type';
+import { createLogger } from '../extend/logger';
 
-import { ProductLogInput, ResetWorkflowInput, SnScanInput, SnScanListInput } from '../types/api';
-import { v4 as uuidV4 } from 'uuid';
-
-import logger from '../extend/logger';
-
+const logger = createLogger('test');
 
 export async function get(ctx: Koa.Context) {
   const query = ctx.request.query;
-  const body: SnScanInput = ctx.request.body;
+  const body: any = ctx.request.body;
 
-  const productId = uuidV4();
-  ctx.body = new Success();
-
+  logger.debug(query);
+  logger.debug(body);
+  const data = {
+    queryParams: query,
+    body
+  };
+  ctx.body = new BaseOutput<any>(data);
 }
+
+export async function post(ctx: Koa.Context) {
+  const query = ctx.request.query;
+  const body: any = ctx.request.body;
+
+  logger.debug(query);
+  logger.debug(body);
+  const data = {
+    queryParams: query,
+    body
+  };
+  ctx.body = new BaseOutput<any>(data);
+}
+
 

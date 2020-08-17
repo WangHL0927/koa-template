@@ -4,7 +4,7 @@ import { environment } from '../environments/environment';
 
 export function createLogger(category: string) {
   const logger = getLogger(category);
-  logger.level = environment.log_level;
+  logger.level = environment.logLevel;
   return logger;
 }
 
