@@ -1,6 +1,6 @@
 import { configure, getLogger } from 'log4js';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environment';
 
 export function createLogger(category: string) {
   const logger = getLogger(category);

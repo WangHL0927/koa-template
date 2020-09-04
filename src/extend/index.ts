@@ -1,7 +1,7 @@
 import { createLogger } from './logger';
 import db from './database/database';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environment';
 
 
 const logger = createLogger('extend');

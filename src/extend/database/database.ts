@@ -1,7 +1,7 @@
 import pg from 'pg';
 import { camelizeKeys } from 'humps';
 import { createLogger } from '../logger';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environment';
 
 import { DBTransactionError } from './type';
 
